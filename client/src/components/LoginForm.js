@@ -30,7 +30,9 @@ const LoginForm = () => {
 
     try {
       const mutationResponse = await login({
-        variables: { email: userFormData.email, password: userFormData.password },
+        variables: { 
+          email: userFormData.email, 
+          password: userFormData.password },
       });
       const token = mutationResponse.data.login.token;
       Auth.login(token);
@@ -49,11 +51,11 @@ const LoginForm = () => {
       // setShowAlert(true);
     }
 
-    setUserFormData({
-      // username: '',
-      email: '',
-      password: '',
-    });
+    // setUserFormData({
+    //   // username: '',
+    //   email: '',
+    //   password: '',
+    // });
   };
 
   return (
